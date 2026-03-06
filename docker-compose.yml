@@ -4,8 +4,6 @@ services:
   recruitment-app: 
     image: praveenx03/recruitment:v1.1.0
     container_name: recruitment-app
-    ports:
-      - "3000:3000"
     environment:
       - MONGO_URI=mongodb://rootuser:rootpassword@mongo:27017/hr_system?authSource=admin
     depends_on:
