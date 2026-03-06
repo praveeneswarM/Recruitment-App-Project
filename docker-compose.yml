@@ -7,7 +7,7 @@ services:
     environment:
       - MONGO_URI=mongodb://rootuser:rootpassword@nginx-proxy:27017/hr_system?authSource=admin
     depends_on:
-      - Database
+      - Nginx
     ports:
       - "3000:3000"
     networks:
@@ -19,7 +19,7 @@ services:
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
     depends_on:
-      - recruitment-app
+      - Database
     networks:
       - net1
       - net2
