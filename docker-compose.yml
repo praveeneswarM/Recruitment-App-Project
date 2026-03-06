@@ -5,7 +5,7 @@ services:
     image: praveenx03/recruitment:v1.1.0
     container_name: recruitment-app
     environment:
-      - MONGO_URI=mongodb://rootuser:rootpassword@nginx-proxy:27017/hr_system?authSource=admin
+      - MONGO_URI=mongodb://rootuser:rootpassword@mongo:27017/hr_system?authSource=admin
     depends_on:
       - Database
     ports:
