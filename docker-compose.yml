@@ -15,8 +15,8 @@ services:
     image: mongo:7
     container_name: mongo
     environment:
-      - MONGO_USERNAME=rootuser
-      - MONGO_PASSWORD=rootpassword
+      - MONGO_INITDB_ROOT_USERNAME=rootuser
+      - MONGO_INITDB_ROOT_PASSWORD=rootpassword
     ports:
       - "27017:27017"
     
