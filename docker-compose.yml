@@ -7,7 +7,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - MONGO_URI=mongodb://rootuser:rootpassword@mongo:27017/hr_system?authSource=rootuser
+      - MONGO_URI=mongodb://rootuser:rootpassword@mongo:27017/hr_system?authSource=admin
     depends_on:
       - Database
     networks:
