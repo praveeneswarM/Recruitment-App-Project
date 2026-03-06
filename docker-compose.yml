@@ -21,8 +21,6 @@ services:
     networks:
       - net1
       - net2
-    ports:
-      - "80:80"
 
   
   Database:
