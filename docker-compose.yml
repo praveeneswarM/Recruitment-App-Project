@@ -12,7 +12,6 @@ services:
       - Database
     networks:
       - net1
-      - net2
   
   Database:
     image: mongo:7
@@ -24,6 +23,7 @@ services:
       - "27017:27017"
     networks:
       - net2
+      - net1
     
       
 networks:
