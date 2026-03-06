@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   recruitment-app: 
-    image: imageNamepraveenx03/recruitment:v1.1.0
+    image: praveenx03/recruitment:v1.1.0
     container_name: recruitment-app
     ports:
       - "3000:3000"
