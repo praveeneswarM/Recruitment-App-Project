@@ -103,7 +103,7 @@ kind: Deployment
 metadata: 
   name: rec-mongodb 
 spec:
-  replica: 1
+  replicas: 1
   selector:
     matchLabels:
       app: mongo-db
