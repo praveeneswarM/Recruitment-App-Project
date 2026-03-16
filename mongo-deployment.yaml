@@ -115,7 +115,7 @@ spec:
       containers:
       - name: mongo-db
         image: mongo:7.0
-        port:
+        ports:
         - containerPort: 27017
         env:
         - name: MONGO_INITDB_ROOT_USERNAME
