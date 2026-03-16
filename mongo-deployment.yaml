@@ -109,7 +109,7 @@ spec:
       app: mongo-db
   template:
     metadata:
-      lables:
+      labels:
         app: mongo-db
     spec:
       containers:
