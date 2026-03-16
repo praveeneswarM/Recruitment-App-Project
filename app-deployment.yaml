@@ -40,16 +40,6 @@ spec:
             configMapKeyRef:
               name: recruitment-app-config
               key: MONGO_URI
-        - name: DB_NAME
-          valueFrom:
-            configMapKeyRef:
-              name: recruitment-app-config
-              key: DB_NAME
-        - name: MONGO_USERNAME
-          valueFrom:
-            configMapKeyRef:
-              name: recruitment-app-config
-              key: MONGO_USERNAME
         
 ---
 apiVersion: v1
