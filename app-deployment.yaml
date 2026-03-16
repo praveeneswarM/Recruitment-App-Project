@@ -6,12 +6,7 @@ data:
   NODE_ENV: "production"
   PORT: "3000"
   MONGO_URI: "mongodb://rootuser:rootpassword@mongo-service:27017/hr_system?authSource=admin"
-  DB_NAME: "hr_system"
-  MONGO_USERNAME: "rootuser"
-  MONGO_PASSWORD: "rootpassword"
-  DEFAULT_ADMIN_ID: "project"
-  DEFAULT_ADMIN_PASSWORD: "project123"
-  LOG_LEVEL: "info"
+  
 
 ---
 
@@ -35,11 +30,6 @@ spec:
         ports:
         - containerPort: 3000
         env:
-        - name: NODE_ENV
-          valueFrom:
-            configMapKeyRef:
-              name: recruitment-app-config
-              key: NODE_ENV
         - name: PORT
           valueFrom:
             configMapKeyRef:
@@ -60,26 +50,7 @@ spec:
             configMapKeyRef:
               name: recruitment-app-config
               key: MONGO_USERNAME
-        - name: MONGO_PASSWORD
-          valueFrom:
-            configMapKeyRef:
-              name: recruitment-app-config
-              key: MONGO_PASSWORD
-        - name: DEFAULT_ADMIN_ID
-          valueFrom:
-            configMapKeyRef:
-              name: recruitment-app-config
-              key: DEFAULT_ADMIN_ID
-        - name: DEFAULT_ADMIN_PASSWORD
-          valueFrom:
-            configMapKeyRef:
-              name: recruitment-app-config
-              key: DEFAULT_ADMIN_PASSWORD
-        - name: LOG_LEVEL
-          valueFrom:
-            configMapKeyRef:
-              name: recruitment-app-config
-              key: LOG_LEVEL
+        
 ---
 apiVersion: v1
 kind: Service
