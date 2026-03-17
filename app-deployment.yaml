@@ -35,18 +35,18 @@ spec:
             configMapKeyRef:
               name: recruitment-app-config
               key: PORT
-        - name: MONGO_USERNAME
+        - name: MONGO_INIT_DB_ROOT_USERNAME
           valueFrom:
             secretKeyRef:
               name: recruitment-secret
               key: username
-        - name: MONGO_PASSWORD
+        - name: MONGO_INIT_DB_ROOT_PASSWORD
           valueFrom:
             secretKeyRef:
               name: recruitment-secret
               key: password
         - name: MONGO_URI
-          value: "mongodb://$(MONGO_USERNAME):$(MONGO_PASSWORD)@mongo-service:27017/hr_system?authSource=admin"
+          value: "mongodb://$(MONGO_INIT_DB_ROOT_USERNAME):$(MONGO_INIT_DB_ROOT_PASSWORD)@mongo-service:27017/hr_system?authSource=admin"
         
 ---
 apiVersion: v1
