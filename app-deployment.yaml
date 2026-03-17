@@ -46,7 +46,7 @@ spec:
               name: recruitment-secret
               key: password
         - name: MONGO_URI
-          value: "mongodb://$(MONGO_INITDB_ROOT_USERNAME):$(MONGO_INITDB_ROOT_PASSWORD)@mongo-service:27017/hr_system?authSource=$(MONGO_INITDB_ROOT_USERNAME)"
+          value: "mongodb://rootuser:rootpassword@mongo-service:27017/hr_system?authSource=admin"
         
 ---
 apiVersion: v1
