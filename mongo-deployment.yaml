@@ -96,15 +96,15 @@ data:
 
     print("HR System database initialization completed successfully!");
 
----
-apiVersion: v1
-kind: Secret
-metadata:
-  name: recruitment-secret 
-type: Opaque
-stringData:
-  username: rootuser
-  password: rootpassword
+# ---
+# apiVersion: v1
+# kind: Secret
+# metadata:
+#   name: recruitment-secret 
+# type: Opaque
+# stringData:
+#   username: rootuser
+#   password: rootpassword
 
 
 ---
@@ -129,18 +129,20 @@ spec:
         ports:
         - containerPort: 27017
         env:
-        - name: MONGO_INITDB_ROOT_USERNAME
-          valueFrom:
-            secretKeyRef:
-              name: recruitment-secret
-              key: username
-
-        - name: MONGO_INITDB_ROOT_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: recruitment-secret
-              key: password
-
+        # - name: MONGO_INITDB_ROOT_USERNAME
+        #   valueFrom:
+        #     secretKeyRef:
+        #       name: recruitment-secret
+        #       key: username
+          - name: MONGO_INITDB_ROOT_USERNAME
+            value: rootuser
+        # - name: MONGO_INITDB_ROOT_PASSWORD
+        #   valueFrom:
+        #     secretKeyRef:
+        #       name: recruitment-secret
+        #       key: password
+          - name: MONGO_INITDB_ROOT_PASSWORD
+            value: rootpassword
 ---
 
 apiVersion: v1
