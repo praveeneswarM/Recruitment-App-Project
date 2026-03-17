@@ -37,7 +37,7 @@ spec:
               key: PORT
         - name: MONGO_URI
           valueFrom:
-            configMapKeyRef:
+            secretKeyRef:
               name: recruitment-app-config
               key: mongo_uri
         
